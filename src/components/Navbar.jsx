@@ -7,7 +7,7 @@ export default function Navbar() {
         <img className='w-[60px]' src='src/movielogo.webp' alt='Nothing to show' />
 
         <Link to='/' className='text-blue-400 text-xl font-medium'>Home</Link>
-        <Link to='/watchlist' className='text-blue-400 text-xl font-medium' >Wish List</Link>
+        <Link to='/watchlist' className='text-blue-400 text-xl font-medium' >Watch List</Link>
       </div>
     </>
   );
