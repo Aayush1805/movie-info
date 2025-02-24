@@ -1,16 +1,14 @@
 export default function MovieCard({ movie, handleAddToWatchList, handleDelFromWatchList, watchList }) {
     // check if the movie is in the watchlist
     function containsMovie(movie) {
-
-        // for(let i = 0; i < movie.length; i++) {
-        //     if(watchList[i].id == movie.id) {
-        //         return true;
-        //     }
-        // }
-
-        // return false;
-      return watchList.some((item) => item.id === movie.id);
-    }
+      for (let i = 0; i < watchList.length; i++) {
+          if (watchList[i].id === movie.id) {
+              return true;
+          }
+      }
+      return false;
+  }
+  
   
     return (
       <div

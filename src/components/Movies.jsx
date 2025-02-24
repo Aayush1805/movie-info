@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import axios from 'axios';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 
 export default function Movies({ handleAddToWatchList, handleDelFromWatchList, watchList }) {
   const [movies, setMovies] = useState([]);
@@ -39,13 +41,9 @@ export default function Movies({ handleAddToWatchList, handleDelFromWatchList, w
       </div>
 
       <div className='flex justify-center'>
-        <button
-          onClick={() => setPage((page) => (page > 1 ? page - 1 : 1))}
-        >
-          {'<--'}
-        </button>
-        Page {page}
-        <button onClick={() => setPage(page + 1)}>{'-->'}</button>
+        <button className='p-2 mb-10 hover:bg-slate-400 border border-black bg-slate-300 h-8' onClick={() => setPage((page) => (page > 1 ? page - 1 : 1))}><FaArrowLeft /></button>
+        <div className='mb-10 pl-2 pr-2 bg-slate-300 border border-black flex text-xl items-center'>Page {page}</div>
+        <button className='p-2 mb-10 hover:bg-slate-400 border border-black bg-slate-300 h-8' onClick={() => setPage(page + 1)}><FaArrowRight/></button>
       </div>
     </>
   );
